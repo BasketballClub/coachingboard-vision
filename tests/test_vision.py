@@ -3,4 +3,4 @@ def test_basic_assertion():
 
 
 def test_basic_assertion2():
-    assert 10 + 10    == 20
+    assert 10 + 10 == 20

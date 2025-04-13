@@ -9,20 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: |
-          pip install black flake8 pytest
-
-      - name: Format check
-        run: black . --check
-
-      - name: Lint
-        run: flake8 .
+      - name: Set up Docker
+        run: sudo sh ./install-docker.sh
 
       - name: Run tests
-        run: pytest
+        run: sh ./run-tests.sh
